@@ -5,14 +5,15 @@ Use these pre-written, highly vetted answers when applying for **Anthropic Claud
 ---
 
 ## 📋 1. Company Information
-- **Company Name:** CogniFlow AI (or CogniFlow Technologies)
-- **Website URL:** `https://cogniflow.tech` (or your domain, e.g. `yourstartup.tech`)
+- **Company Name:** CogniFlow AI (CogniFlow Technologies)
+- **Website URL:** `https://tanmayanalyst.github.io/cogniflow-ai/`
+- **GitHub Repository:** `https://github.com/tanmayanalyst/cogniflow-ai`
 - **Founding Date:** 2026
-- **Stage:** Pre-Seed / Early Stage Alpha
+- **Stage:** Early Stage Alpha / Pre-Seed
 - **Team Size:** 1 - 3 (Technical Founders)
 - **Location:** India (Remote)
 - **Primary Contact / Founder:** Tanmay Thakur (Founder & Lead Architect)
-- **Founder Email:** `tanmay@yourstartup.tech` *(use your custom Zoho domain email)*
+- **Founder Email:** `0808cs241354.ies@ipsacademy.org` *(Use this or your custom domain email once Zoho is active)*
 
 ---
 
