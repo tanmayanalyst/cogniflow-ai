@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CogniFlow AI — Autonomous Cognitive Engineering Agents</title>
+  <meta name="description" content="Supercharge software engineering with Claude-powered autonomous agents for code review, architectural reasoning, and automated PR triage.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Ambient Glow Effects -->
+  <div class="glow-orb orb-primary"></div>
+  <div class="glow-orb orb-secondary"></div>
+  <div class="grid-overlay"></div>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="#" class="brand-logo">
+        <div class="logo-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+          </svg>
+        </div>
+        <span class="logo-text">CogniFlow<span class="gradient-text">.ai</span></span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="#features">Platform</a>
+        <a href="#playground">Interactive Agent</a>
+        <a href="#architecture">Architecture</a>
+        <a href="#benchmarks">Benchmarks</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="btn btn-secondary" id="loginBtn">Sign In</button>
+        <button class="btn btn-primary" id="requestAccessBtn">Request Early Access</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-badge">
+      <span class="pulse-dot"></span>
+      <span class="badge-text">Powered by Anthropic Claude 3.5 Sonnet Reasoning</span>
+      <span class="badge-arrow">→</span>
+    </div>
+
+    <h1 class="hero-title">
+      The Autonomous Intelligence Layer for <br>
+      <span class="gradient-hero-text">Modern Engineering Teams</span>
+    </h1>
+
+    <p class="hero-subtitle">
+      CogniFlow unifies multi-repo contextual reasoning, automated PR triage, and zero-shot architectural refactoring into self-healing autonomous agents.
+    </p>
+
+    <div class="hero-cta-group">
+      <button class="btn btn-primary btn-large glow-hover" id="heroWaitlistBtn">
+        <span>Get Priority Access</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </button>
+      <a href="#playground" class="btn btn-glass btn-large">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polygon points="5 3 19 12 5 21 5 3"></polygon>
+        </svg>
+        <span>Test Interactive Agent</span>
+      </a>
+    </div>
+
+    <!-- Live Terminal Simulator Preview -->
+    <div class="hero-terminal-container">
+      <div class="terminal-window">
+        <div class="terminal-header">
+          <div class="terminal-dots">
+            <span class="dot dot-red"></span>
+            <span class="dot dot-yellow"></span>
+            <span class="dot dot-green"></span>
+          </div>
+          <div class="terminal-title">cogniflow-agent — sonnet-3.5-runtime — branch: main</div>
+          <div class="terminal-status"><span class="live-pill">LIVE ENGINE</span></div>
+        </div>
+        <div class="terminal-body" id="heroTerminalContent">
+          <div class="terminal-line"><span class="t-prompt">$</span> <span class="t-cmd">cogniflow review --pr 842 --deep-verify</span></div>
+          <div class="terminal-line t-dim">Initializing Claude 3.5 Sonnet AST Parser & Vector Context...</div>
+          <div class="terminal-line t-success">✓ 42,890 lines indexed across 14 dependency graphs in 210ms</div>
+          <div class="terminal-line t-warning">⚡ Anomaly Detected: Race condition in DistributedLockManager.kt (L142)</div>
+          <div class="terminal-line t-cyan">→ Synthesizing atomic CAS mutex patch with 100% test coverage...</div>
+          <div class="terminal-line t-highlight">✓ Generated patch #cf-patch-089 ready. Zero regressions detected.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Metrics / Stats Bar -->
+  <section class="stats-section">
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-num">10x</div>
+        <div class="stat-label">Faster Code Reviews</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">99.4%</div>
+        <div class="stat-label">Syntax & Logic Precision</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">45+ hrs</div>
+        <div class="stat-label">Saved Per Engineer / Month</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">&lt; 350ms</div>
+        <div class="stat-label">Claude Sonnet Inference Time</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Agent Playground -->
+  <section class="playground-section" id="playground">
+    <div class="section-badge">INTERACTIVE SIMULATION</div>
+    <h2 class="section-title">Experience the Autonomous Agent in Action</h2>
+    <p class="section-desc">Select a engineering scenario and watch CogniFlow analyze, reason, and output fixes in real time.</p>
+
+    <div class="playground-box">
+      <div class="playground-controls">
+        <button class="preset-btn active" data-preset="security">
+          <span class="icon">🛡️</span> Security Flaw Triage
+        </button>
+        <button class="preset-btn" data-preset="concurrency">
+          <span class="icon">⚡</span> Async Race Condition
+        </button>
+        <button class="preset-btn" data-preset="sql">
+          <span class="icon">📊</span> SQL Query Optimization
+        </button>
+        <button class="btn btn-primary" id="runSimulatorBtn">
+          <span>Run CogniFlow Agent</span>
+        </button>
+      </div>
+
+      <div class="playground-editor">
+        <div class="editor-pane input-pane">
+          <div class="pane-header">
+            <span>INPUT SNIPPET</span>
+            <span class="tag" id="inputLanguage">TypeScript</span>
+          </div>
+          <pre class="code-block" id="playgroundInputCode"><code>// Vulnerable Authentication Token Verification
+export async function verifyUserToken(req, res) {
+  const token = req.headers['x-auth-token'];
+  const user = await db.users.find({ token }); // Unsafe token lookup
+  if (user) {
+    req.userId = user.id;
+    return next();
+  }
+  return res.status(401).send("Unauthorized");
+}</code></pre>
+        </div>
+
+        <div class="editor-pane output-pane">
+          <div class="pane-header">
+            <span>CLAUDE 3.5 SONNET AGENT OUTPUT</span>
+            <span class="status-indicator" id="agentStatus"><span class="dot"></span> Ready</span>
+          </div>
+          <div class="agent-output-stream" id="agentOutputStream">
+            <div class="empty-state">
+              Click <strong>"Run CogniFlow Agent"</strong> above to trigger autonomous analysis and zero-shot remediation.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Features -->
+  <section class="features-section" id="features">
+    <div class="section-badge">CAPABILITIES</div>
+    <h2 class="section-title">Engineered for High-Velocity Software Teams</h2>
+    <p class="section-desc">Bridging the gap between raw LLMs and production-grade software delivery.</p>
+
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon bg-violet">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="16 18 22 12 16 6"></polyline>
+            <polyline points="8 6 2 12 8 18"></polyline>
+          </svg>
+        </div>
+        <h3 class="feature-heading">Context-Aware PR Review</h3>
+        <p class="feature-text">Reads across your whole repository graph, identifying subtle architectural breaks that traditional linters fail to catch.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon bg-blue">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"></circle>
+            <path d="M12 6v6l4 2"></path>
+          </svg>
+        </div>
+        <h3 class="feature-heading">Sub-Second Incident Triage</h3>
+        <p class="feature-text">Ingests crash logs, stack traces, and APM metrics, automatically linking them to root cause commits and drafting hotfix PRs.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon bg-emerald">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+          </svg>
+        </div>
+        <h3 class="feature-heading">Enterprise Privacy Sandbox</h3>
+        <p class="feature-text">Zero data retention guarantee. Your proprietary codebase is processed within ephemeral VPC enclaves with zero model training.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon bg-amber">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+          </svg>
+        </div>
+        <h3 class="feature-heading">Multi-Agent Self-Correction</h3>
+        <p class="feature-text">Multiple Claude agents peer-review each other's generated solutions before any code touches your staging or main branches.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Architecture -->
+  <section class="architecture-section" id="architecture">
+    <div class="section-badge">DEEP DIVE</div>
+    <h2 class="section-title">The CogniFlow Cognitive Architecture</h2>
+    <div class="arch-card">
+      <div class="arch-flow">
+        <div class="arch-node">
+          <div class="node-title">GitHub / GitLab Webhook</div>
+          <div class="node-desc">PR & Push Events</div>
+        </div>
+        <div class="arch-arrow">→</div>
+        <div class="arch-node highlight">
+          <div class="node-title">CogniFlow Context Engine</div>
+          <div class="node-desc">Graph AST + Vector Retrieval</div>
+        </div>
+        <div class="arch-arrow">→</div>
+        <div class="arch-node sonnet-node">
+          <div class="node-title">Anthropic Claude 3.5 Sonnet</div>
+          <div class="node-desc">200K Context Window Reasoning</div>
+        </div>
+        <div class="arch-arrow">→</div>
+        <div class="arch-node">
+          <div class="node-title">Automated PR Verification</div>
+          <div class="node-desc">Test Suites & Verified Merge</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Waitlist Modal -->
+  <div class="modal-overlay" id="waitlistModal">
+    <div class="modal-card">
+      <button class="modal-close" id="modalCloseBtn">&times;</button>
+      <div class="modal-header">
+        <div class="logo-icon small">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+          </svg>
+        </div>
+        <h3>Request Early Access to CogniFlow</h3>
+        <p>Join the waitlist for private alpha onboarding.</p>
+      </div>
+      <form id="waitlistForm" class="waitlist-form">
+        <div class="form-group">
+          <label for="fullName">Full Name</label>
+          <input type="text" id="fullName" placeholder="Tanmay Thakur" required>
+        </div>
+        <div class="form-group">
+          <label for="workEmail">Work / Business Email</label>
+          <input type="email" id="workEmail" placeholder="tanmay@yourcompany.tech" required>
+        </div>
+        <div class="form-group">
+          <label for="teamSize">Engineering Team Size</label>
+          <select id="teamSize">
+            <option value="1-5">1 - 5 Engineers (Seed / Early Stage)</option>
+            <option value="5-20">5 - 20 Engineers (Growth)</option>
+            <option value="20-100">20 - 100 Engineers (Scaling)</option>
+            <option value="100+">100+ Engineers (Enterprise)</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Join Founder Waitlist</button>
+      </form>
+      <div id="waitlistSuccess" class="waitlist-success" style="display: none;">
+        <div class="success-icon">✓</div>
+        <h4>You are on the VIP priority list!</h4>
+        <p>We've registered your spot. Our engineering team will reach out with sandbox credentials shortly.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <div class="brand-logo">
+          <div class="logo-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+            </svg>
+          </div>
+          <span class="logo-text">CogniFlow<span class="gradient-text">.ai</span></span>
+        </div>
+        <p class="footer-desc">Autonomous AI Software Engineering Platform built on Claude 3.5 Sonnet foundation.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Product</h4>
+          <a href="#features">Features</a>
+          <a href="#playground">Agent Demo</a>
+          <a href="#architecture">Architecture</a>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="#">About Us</a>
+          <a href="#">Careers</a>
+          <a href="#">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Security</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 CogniFlow AI, Inc. All rights reserved. Backed by next-generation AI founders.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
